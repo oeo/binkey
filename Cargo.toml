@@ -1,0 +1,21 @@
+[package]
+name = "binkey"
+version = "0.1.0"
+edition = "2021"
+
+[profile.release]
+opt-level = 's' 
+lto = true 
+debug = false 
+debug-assertions = false 
+codegen-units = 1 
+panic = 'abort' 
+
+[dependencies]
+base64 = "0.21.5"
+env_logger = "0.10.1"
+getopts = "0.2.21"
+log = "0.4.20"
+magic-crypt = "3.1.13"
+rand = "0.8.5"
+

@@ -1,0 +1,9 @@
+#!/bin/bash
+# Store the command line arguments in a variable
+args="$@"
+
+# Set the RUST_LOG variable to 'info'
+export RUST_LOG=debug
+
+# Run the cargo command with the provided arguments
+cargo run -- $args
