@@ -50,7 +50,7 @@ fn stub() {
     let mut opts = Options::new();
     opts.optopt("o", "outfile", "", "");
     opts.optopt("p", "password", "", "");
-    // opts.optflag("s", "stdout", "overrides outfile");
+    opts.optflag("s", "stdout", "overrides outfile");
     opts.optflag("h", "help", "");
 
     let matches = opts.parse(&args[1..]).unwrap_or_else(|f| {
@@ -134,7 +134,7 @@ fn main() {
     // opts.optopt("f", "file", "", "");
     opts.optopt("o", "outfile", "", "");
     opts.optopt("p", "password", "", "");
-    // opts.optflag("s", "stdout", "overrides outfile");
+    opts.optflag("s", "stdout", "overrides outfile");
     opts.optflag("h", "help", "");
 
     let matches = opts.parse(&args[1..]).unwrap_or_else(|f| {
