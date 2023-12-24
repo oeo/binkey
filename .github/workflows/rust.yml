@@ -11,12 +11,27 @@ env:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v3
-    - name: Build
+
+    - name: Build Debug
       run: cargo build --verbose
+
+    - name: Build Release
+      run: cargo build --release --verbose
+
     - name: Run tests
       run: cargo test --verbose
+
+    - name: Package Release Build
+      run: |
+        tar czvf binkey_release.tar.gz -C target/release/ .
+
+    - name: Upload Release Artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: release-artifact
+        path: binkey_release.tar.gz
+
