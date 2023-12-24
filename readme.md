@@ -10,13 +10,13 @@ binkey is a rust-based encryption tool that transforms any file into a self-extr
 ## how it works
 binkey employs base64 encoding and aes-256 encryption for securing files. each encrypted file is encapsulated between unique header and footer delimiters, marking the encrypted data segment within the binary.
 
-<p><img src="https://owij9.s3.amazonaws.com/zAKDMrkgN.png" height="400" align="center"/></p>
-
 ### encryption
 to encrypt a file:
 ```
 binkey file [outfile] -p <passphrase>
 ```
+
+<p><img src="https://owij9.s3.amazonaws.com/zAKDMrkgN.png" height="400" align="center"/></p>
 
 ### decryption
 running the encrypted file prompts for the passphrase, allowing for decryption and extraction of the original content without needing an external binkey installation.
